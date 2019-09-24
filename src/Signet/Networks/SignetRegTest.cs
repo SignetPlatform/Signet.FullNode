@@ -1,4 +1,10 @@
-﻿using System;
+﻿//
+//  Signet.FullNode - Blockchain / Cryptocurrency Platform
+//  Portions Copyright © 2019 Synuit Software. All Rights Reserved.
+//
+//  $!!$ tac
+//
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
