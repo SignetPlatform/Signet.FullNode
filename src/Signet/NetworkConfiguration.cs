@@ -32,10 +32,10 @@ namespace Signet
                     Identifier = "main",
                     Chain = "signet",
                     Name = "Signet Main",
-                    Port = 4333,
-                    RpcPort = 4334,
-                    ApiPort = 4335,
-                    WsPort = 4336
+                    Port = 4341,
+                    RpcPort = 4342,
+                    ApiPort = 4343,
+                    WsPort = 4344
                 },
 
 
@@ -43,20 +43,20 @@ namespace Signet
                     Identifier = "regtest",
                     Chain = "signet",
                     Name = "Signet RegTest",
-                    Port = 14333,
-                    RpcPort = 14334,
-                    ApiPort = 14335,
-                    WsPort = 14336
+                    Port = 14341,
+                    RpcPort = 14342,
+                    ApiPort = 14343,
+                    WsPort = 14344
                 },
 
                 new NetworkConfiguration() {
                     Identifier = "testnet",
                     Chain = "signet",
                     Name = "Signet Test",
-                    Port = 24333 ,
-                    RpcPort = 24334,
-                    ApiPort = 24335,
-                    WsPort = 24336
+                    Port = 24341 ,
+                    RpcPort = 24342,
+                    ApiPort = 24343,
+                    WsPort = 24344
                 },
 
                  new NetworkConfiguration() {
