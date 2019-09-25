@@ -31,21 +31,18 @@ namespace Signet.Networks
          var consensusFactory = new PosConsensusFactory();
 
          // Create the genesis block.
-         this.GenesisTime = 1538395200; // 10/01/2018 @ 12:00pm (UTC)
-         this.GenesisNonce = 6967;
+         this.GenesisTime = 1569433840;
+         this.GenesisNonce = 8233;
          this.GenesisBits = 0x1F0FFFFF;
          this.GenesisVersion = 1;
          this.GenesisReward = Money.Zero;
 
-         // 2017-08-18: "Libertarianisme er en politisk tankeretning som legger stor vekt på individuell frihet, og prosjektet er blitt omtalt over hele verden på sentrale nettsider for folk som handler med kryptovalutaer, altså penger og sikre verdipapirer som fungerer helt uten en sentral myndighet."
-         // https://morgenbladet.no/aktuelt/2017/08/privatlivets-fred-i-liberstad
-         string pszTimestamp = "August 18 2017, Morgenbladet, Money that work without a central authority";
+         // SIGNET TEST GENESIS BLOCK:
+         // 2019-09-24: "'Storm Area 51' has Nevada counties facing potentially hefty bills"
+         // URL: https://www.foxnews.com/science/storm-area-51-nevada-counties-hefty-bills
+         var pszTimestamp = "Sept. 24 2019, FoxNews.com, 'Storm Area 51' has Nevada counties facing ...";
 
          Block genesisBlock = CreateSignetGenesisBlock(pszTimestamp, consensusFactory, this.GenesisTime, this.GenesisNonce, this.GenesisBits, this.GenesisVersion, this.GenesisReward);
-
-         //genesisBlock.Header.Time = 1493909211;
-         //genesisBlock.Header.Nonce = 2433759;
-         //genesisBlock.Header.Bits = powLimit;
 
          this.Genesis = genesisBlock;
 
@@ -95,8 +92,8 @@ namespace Signet.Networks
              powTargetTimespan: TimeSpan.FromSeconds(14 * 24 * 60 * 60), // two weeks
              powTargetSpacing: TimeSpan.FromSeconds(10 * 60),
              powAllowMinDifficultyBlocks: false,
-         posNoRetargeting: false,
-         powNoRetargeting: false,
+            posNoRetargeting: false,
+            powNoRetargeting: false,
              powLimit: powLimit,
              minimumChainWork: null,
              isProofOfStake: true,
@@ -106,9 +103,9 @@ namespace Signet.Networks
              proofOfStakeReward: Money.Coins(20)
          );
 
-         this.Base58Prefixes[(int)Base58Type.PUBKEY_ADDRESS] = new byte[] { (66) };
+         this.Base58Prefixes[(int)Base58Type.PUBKEY_ADDRESS] = new byte[] { (65) };
          this.Base58Prefixes[(int)Base58Type.SCRIPT_ADDRESS] = new byte[] { (196) };
-         this.Base58Prefixes[(int)Base58Type.SECRET_KEY] = new byte[] { (66 + 128) };
+         this.Base58Prefixes[(int)Base58Type.SECRET_KEY] = new byte[] { (65 + 128) };
 
          this.Checkpoints = new Dictionary<int, CheckpointInfo>
             {
@@ -135,8 +132,8 @@ namespace Signet.Networks
 
          // 64 below should be changed to TargetSpacingSeconds when we move that field.
          Assert(this.DefaultBanTimeSeconds <= this.Consensus.MaxReorgLength * 64 / 2);
-         Assert(this.Consensus.HashGenesisBlock == uint256.Parse("0x00077765f625cc2cb6266544ff7d5a462f25be14ea1116dc2bd2fec17e40a5e3"));
-         Assert(this.Genesis.Header.HashMerkleRoot == uint256.Parse("0x034aaae9ca8e297078a2fed80cdaaf72ffad8aa1b1988c7b6edd8f01d69312ca"));
+         Assert(this.Consensus.HashGenesisBlock == uint256.Parse("0x00091cce582b4d90bb8143b4a84e0f84974c76ee06b9163a046c629cce5e5128"));
+         Assert(this.Genesis.Header.HashMerkleRoot == uint256.Parse("0xefc3a0e44b1eb1ab0d47c07f4900ebd8ffe4c19b8b8ab3f915fa2ac3ef0c2418"));
 
          this.RegisterRules(this.Consensus);
       }

@@ -3,7 +3,7 @@
 namespace Signet.Networks
 {
     /// <summary>
-    /// BIP9 deployments for the Signet Chain network.
+    /// BIP9 deployments for the Signet Blockchain network.
     /// </summary>
     public class SignetBIP9Deployments : BIP9DeploymentsArray
     {

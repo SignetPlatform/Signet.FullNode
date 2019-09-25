@@ -25,15 +25,15 @@ namespace Signet.Chain.Tests
          // SIGNET TEST GENESIS BLOCK:
          // 2019-09-24: "'Storm Area 51' has Nevada counties facing potentially hefty bills"
          // URL: https://www.foxnews.com/science/storm-area-51-nevada-counties-hefty-bills
-         var urlTest = "Sept. 24 2019, FoxNews.com, 'Storm Area 51' has Nevada counties facing potentially hefty bills";
+         var urlTest = "Sept. 24 2019, FoxNews.com, 'Storm Area 51' has Nevada counties facing ...";
 
          // SIGNET REG-TEST GENESIS BLOCK:
          // 2019-09-24: "GE Healthcare officially launches Edison AI platform in China"
          // URL: https://www.healthcareitnews.com/news/asia-pacific/ge-healthcare-officially-launches-edison-ai-platform-china
-         var urlRegTest = "Sept. 24, 2019, Healthcare IT News, GE Healthcare officially launches Edison AI platform in China";
+         var urlRegTest = "Sept. 24, 2019, Healthcare IT News, GE Healthcare officially launches Edison AI ...";
 
-         uint testTime = 1569362742; // $!!$ tac 09/24/2019 @ 10:05pm (UTC)
-         var testBlock = Network.MineGenesisBlock(new PosConsensusFactory(), urlTest, new Target(new uint256("000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff")), Money.Zero, testTime);
+         //$!!$ tac uint testTime = 1569362742; // $!!$ tac 09/24/2019 @ 10:05pm (UTC)
+         var testBlock = Network.MineGenesisBlock(new PosConsensusFactory(), urlTest, new Target(new uint256("000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff")), Money.Zero); //$!!$tac, testTime);
 
          contents.Add("TEST GENESIS BLOCK:");
          contents.Add("Test Nonce: " + testBlock.Header.Nonce);
@@ -42,8 +42,8 @@ namespace Signet.Chain.Tests
          contents.Add("Test Hash: " + testBlock.Header.ToString());
          contents.Add("Test Hash Merkle Root: " + testBlock.Header.HashMerkleRoot);
 
-         uint regTestTime = 156936278; // $!!$ tac 09/24/2019 @ 10:06pm (UTC)
-         var regTestBlock = Network.MineGenesisBlock(new PosConsensusFactory(), urlRegTest, new Target(new uint256("0000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff")), Money.Zero, regTestTime);
+         //$!!$ tac uint regTestTime = 156936278; // $!!$ tac 09/24/2019 @ 10:06pm (UTC)
+         var regTestBlock = Network.MineGenesisBlock(new PosConsensusFactory(), urlRegTest, new Target(new uint256("0000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff")), Money.Zero); //$!!$tac, regTestTime);
 
          contents.Add("");
          contents.Add("TEST REG GENESIS BLOCK:");
@@ -53,8 +53,8 @@ namespace Signet.Chain.Tests
          contents.Add("Reg Test Hash: " + regTestBlock.Header.ToString());
          contents.Add("Reg Test Hash Merkle Root: " + regTestBlock.Header.HashMerkleRoot);
 
-         int mainTime = 1569362824;  // $!!$ tac 09/24/2019 @ 10:07pm (UTC)
-         var mainBlock = Network.MineGenesisBlock(new PosConsensusFactory(), urlMain, new Target(new uint256("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff")), Money.Zero, mainTime);
+         //$!!$ tac int mainTime = 1569362824;  // $!!$ tac 09/24/2019 @ 10:07pm (UTC)
+         var mainBlock = Network.MineGenesisBlock(new PosConsensusFactory(), urlMain, new Target(new uint256("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff")), Money.Zero); //$!!$tac,  mainTime);
 
          contents.Add("");
          contents.Add("MAIN GENESIS BLOCK:");

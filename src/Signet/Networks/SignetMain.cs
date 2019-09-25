@@ -61,8 +61,8 @@ namespace Signet.Networks
          var consensusFactory = new PosConsensusFactory();
 
          // Create the genesis block.
-         this.GenesisTime = 1569362824;  // $!!$ tac 09/24/2019 @ 10:07pm (UTC)
-         this.GenesisNonce = 6192331; //$!!$ tac
+         this.GenesisTime = 1569433880;   // $!!$ tac
+         this.GenesisNonce = 2608243;     // $!!$ tac
          this.GenesisBits = 0x1E0FFFFF;
          this.GenesisVersion = 1;
          this.GenesisReward = Money.Zero;
@@ -158,9 +158,9 @@ namespace Signet.Networks
          // The algorithm for encoding address_byte_string (consisting of 1 - byte_version + hash_or_other_data + 4 - byte_check_code) is
          //
          this.Base58Prefixes = new byte[12][];
-         this.Base58Prefixes[(int)Base58Type.PUBKEY_ADDRESS] = new byte[] { (25) }; // P2PKH: S, list: https://en.bitcoin.it/wiki/List_of_address_prefixes
-         this.Base58Prefixes[(int)Base58Type.SCRIPT_ADDRESS] = new byte[] { (50) }; // P2SH: s
-         this.Base58Prefixes[(int)Base58Type.SECRET_KEY] = new byte[] { (25 + 128) }; // WIF: s (compressed, 8 uncompressed), initial character for compressed private key in WIF format.
+         this.Base58Prefixes[(int)Base58Type.PUBKEY_ADDRESS] = new byte[] { (63) }; // P2PKH: S, list: https://en.bitcoin.it/wiki/List_of_address_prefixes
+         this.Base58Prefixes[(int)Base58Type.SCRIPT_ADDRESS] = new byte[] { (125) }; // P2SH: s
+         this.Base58Prefixes[(int)Base58Type.SECRET_KEY] = new byte[] { (63 + 128) }; // WIF: s (compressed, 8 uncompressed), initial character for compressed private key in WIF format.
          this.Base58Prefixes[(int)Base58Type.ENCRYPTED_SECRET_KEY_NO_EC] = new byte[] { 0x01, 0x42 };
          this.Base58Prefixes[(int)Base58Type.ENCRYPTED_SECRET_KEY_EC] = new byte[] { 0x01, 0x43 };
          this.Base58Prefixes[(int)Base58Type.EXT_PUBLIC_KEY] = new byte[] { (0x04), (0x88), (0xB2), (0x1E) };
@@ -217,8 +217,8 @@ namespace Signet.Networks
 
          // 64 below should be changed to TargetSpacingSeconds when we move that field.
          Assert(this.DefaultBanTimeSeconds <= this.Consensus.MaxReorgLength * 64 / 2);
-         Assert(this.Consensus.HashGenesisBlock == uint256.Parse("0x07a19759ebf83a580ac7dd91c28cc55662d9a03425a62d816a7e7ca7266ee66c"));
-         Assert(this.Genesis.Header.HashMerkleRoot == uint256.Parse("0x784de7f6a1df31d08d395fde5d6bfe9e6c854da899ee0e0fb311798ce4ec82a3"));
+         Assert(this.Consensus.HashGenesisBlock == uint256.Parse("0x0000026035d95557fa8412b9708258ba04a9c19eeb23369f8d7fafe71448efa6"));
+         Assert(this.Genesis.Header.HashMerkleRoot == uint256.Parse("0xa37d328888a76c2d29da2ea8ce8b741d5b6412c44dfab1b7e2fb21e267b93391"));
 
          this.RegisterRules(this.Consensus);
          this.RegisterMempoolRules(this.Consensus);
