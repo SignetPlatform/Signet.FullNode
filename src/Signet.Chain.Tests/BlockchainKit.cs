@@ -42,8 +42,8 @@ namespace Signet.Chain.Tests
          contents.Add("Test Hash: " + testBlock.Header.ToString());
          contents.Add("Test Hash Merkle Root: " + testBlock.Header.HashMerkleRoot);
 
-         //$!!$ tac uint regTestTime = 156936278; // $!!$ tac 09/24/2019 @ 10:06pm (UTC)
-         var regTestBlock = Network.MineGenesisBlock(new PosConsensusFactory(), urlRegTest, new Target(new uint256("0000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff")), Money.Zero); //$!!$tac, regTestTime);
+            //$!!$ tac uint regTestTime = 156936278; // $!!$ tac 09/24/2019 @ 10:06pm (UTC)
+            Block regTestBlock = Network.MineGenesisBlock(new PosConsensusFactory(), urlRegTest, new Target(new uint256("0000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff")), Money.Zero); //$!!$tac, regTestTime);
 
          contents.Add("");
          contents.Add("TEST REG GENESIS BLOCK:");

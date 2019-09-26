@@ -169,7 +169,7 @@ namespace Signet.Chain.Tests.Features.Wallet
          //    var wallet = walletManager.LoadWallet("default", "default");
 
          //    Assert.Equal(wallet.EncryptedSeed, defaultWallet.EncryptedSeed);
-         //}
+         }
 
          private WalletManager CreateWalletManager(DataFolder dataFolder, Network network, params string[] cmdLineArgs)
          {

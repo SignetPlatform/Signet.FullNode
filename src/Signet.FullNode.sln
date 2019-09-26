@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27703.2042
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.352
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "global", "global", "{5B331FD3-D493-46A9-928B-B786FC6F3103}"
 	ProjectSection(SolutionItems) = preProject
@@ -183,6 +183,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Signet.Chain", "Signet.Chain\Signet.Chain.csproj", "{8228EC6B-32AC-4722-B4D5-85F5E553EBD6}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Signet.Chain.Tests", "Signet.Chain.Tests\Signet.Chain.Tests.csproj", "{53CA37DC-484D-4085-BAF2-72AAC519B2A6}"
+EndProject
+Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "DependencyValidation1", "DependencyValidation1\DependencyValidation1.modelproj", "{0FA31F2B-CDE6-4488-A99C-FEE56BEF981A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -482,6 +484,10 @@ Global
 		{53CA37DC-484D-4085-BAF2-72AAC519B2A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{53CA37DC-484D-4085-BAF2-72AAC519B2A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{53CA37DC-484D-4085-BAF2-72AAC519B2A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FA31F2B-CDE6-4488-A99C-FEE56BEF981A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FA31F2B-CDE6-4488-A99C-FEE56BEF981A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FA31F2B-CDE6-4488-A99C-FEE56BEF981A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FA31F2B-CDE6-4488-A99C-FEE56BEF981A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
