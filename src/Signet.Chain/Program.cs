@@ -19,6 +19,7 @@
    using Stratis.Bitcoin.Features.MemoryPool;
    using Stratis.Bitcoin.Features.Miner;
    using Stratis.Bitcoin.Features.RPC;
+   using Stratis.Bitcoin.Features.Wallet;
    using Stratis.Bitcoin.Utilities;
 
    public class Program
@@ -67,7 +68,7 @@
            .Append("-apiport=" + apiPort)
                 .Append("-wsport=" + networkConfiguration.WsPort).ToArray();
 
-            var nodeSettings = new NodeSettings(networksSelector: GetNetwork(chain), protocolVersion: ProtocolVersion.PROVEN_HEADER_VERSION, args: args, agent: "SignetChain")
+            var nodeSettings = new NodeSettings(networksSelector: GetNetwork(chain), protocolVersion: ProtocolVersion.PROVEN_HEADER_VERSION, args: args, agent: "SignetNode")
             {
                MinProtocolVersion = ProtocolVersion.ALT_PROTOCOL_VERSION
             };
