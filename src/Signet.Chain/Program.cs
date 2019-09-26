@@ -64,7 +64,7 @@
             var apiPort = configReader.GetOrDefault<string>("apiport", networkConfiguration.ApiPort.ToString());
 
             args = args
-           .Append("-datadirroot=SignetNode") // DataDirRoot can be supplied to specify where to locate files, make sure it is always set to SignetChain.
+           .Append("-datadirroot=SignetNode") // DataDirRoot can be supplied to specify where to locate files, make sure it is always set to SignetNode.
            .Append("-apiport=" + apiPort)
                 .Append("-wsport=" + networkConfiguration.WsPort).ToArray();
 
@@ -102,9 +102,10 @@
                   .UseBlockExplorer()
                   .UsePosConsensus()
                   .UseMempool()
-                  .UseColdStakingWallet()
-                  //.UseWallet()
+                  //.UseColdStakingWallet()  // $!!$ tac
+                  .UseWallet() //$!!$ tac
                   .AddPowPosMining()
+                  .AddMining() //$!!$ tac
                   .UseApi()
                   .UseDns()
                   .AddRPC()
@@ -118,9 +119,10 @@
                    .UseBlockExplorer()
                    .UsePosConsensus()
                    .UseMempool()
-                   .UseColdStakingWallet()
-                   //.UseWallet()
-                   .AddPowPosMining()
+                   //.UseColdStakingWallet() // $!!$ tac
+                   .UseWallet() //$!!$ tac
+                   .AddPowPosMining() //$!!$ tac
+                   //.AddMining() //$!!$ tac
                    .UseApi()
                    .UseApps()
                    .AddRPC()
