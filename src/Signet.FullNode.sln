@@ -186,6 +186,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Signet.Chain.Tests", "Signe
 EndProject
 Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "DependencyValidation1", "DependencyValidation1\DependencyValidation1.modelproj", "{0FA31F2B-CDE6-4488-A99C-FEE56BEF981A}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Signet.Chain.Cli", "Signet.Chain.Cli\Signet.Chain.Cli.csproj", "{444A9EB7-73B1-46FD-89A0-EF21F8EBB2DD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -488,6 +490,10 @@ Global
 		{0FA31F2B-CDE6-4488-A99C-FEE56BEF981A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0FA31F2B-CDE6-4488-A99C-FEE56BEF981A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0FA31F2B-CDE6-4488-A99C-FEE56BEF981A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{444A9EB7-73B1-46FD-89A0-EF21F8EBB2DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{444A9EB7-73B1-46FD-89A0-EF21F8EBB2DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{444A9EB7-73B1-46FD-89A0-EF21F8EBB2DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{444A9EB7-73B1-46FD-89A0-EF21F8EBB2DD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
