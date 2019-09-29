@@ -125,7 +125,7 @@ namespace Signet.Networks
             posNoRetargeting: false,
             powNoRetargeting: false,
             powLimit: new Target(new uint256("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff")),
-            minimumChainWork: null,
+            minimumChainWork:    new uint256("0000000000000000000000000000000000000000000000000000000100010001"),
             isProofOfStake: true,
             lastPowBlock: 12500,
             proofOfStakeLimit: new BigInteger(uint256.Parse("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff").ToBytes(false)),
@@ -160,7 +160,7 @@ namespace Signet.Networks
          this.Base58Prefixes = new byte[12][];
          this.Base58Prefixes[(int)Base58Type.PUBKEY_ADDRESS] = new byte[] { (63) }; // P2PKH: S, list: https://en.bitcoin.it/wiki/List_of_address_prefixes
          this.Base58Prefixes[(int)Base58Type.SCRIPT_ADDRESS] = new byte[] { (125) }; // P2SH: s
-         this.Base58Prefixes[(int)Base58Type.SECRET_KEY] = new byte[] { (63 + 128) }; // WIF: s (compressed, 8 uncompressed), initial character for compressed private key in WIF format.
+         this.Base58Prefixes[(int)Base58Type.SECRET_KEY] = new byte[] { (63 + 128) }; // WIF: V (compressed, 8 uncompressed), initial character for compressed private key in WIF format.
          this.Base58Prefixes[(int)Base58Type.ENCRYPTED_SECRET_KEY_NO_EC] = new byte[] { 0x01, 0x42 };
          this.Base58Prefixes[(int)Base58Type.ENCRYPTED_SECRET_KEY_EC] = new byte[] { 0x01, 0x43 };
          this.Base58Prefixes[(int)Base58Type.EXT_PUBLIC_KEY] = new byte[] { (0x04), (0x88), (0xB2), (0x1E) };
