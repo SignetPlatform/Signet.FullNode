@@ -102,10 +102,10 @@
                   .UseBlockExplorer()
                   .UsePosConsensus()
                   .UseMempool()
-                  //.UseColdStakingWallet()  // $!!$ tac
-                  .UseWallet() //$!!$ tac
+                  .UseColdStakingWallet()  // $!!$ tac
+                  //.UseWallet() //$!!$ tac
                   .AddPowPosMining()
-                  .AddMining() //$!!$ tac
+                  //.AddMining() //$!!$ tac
                   .UseApi()
                   .UseDns()
                   .AddRPC()
@@ -119,8 +119,8 @@
                    .UseBlockExplorer()
                    .UsePosConsensus()
                    .UseMempool()
-                   //.UseColdStakingWallet() // $!!$ tac
-                   .UseWallet() //$!!$ tac
+                   .UseColdStakingWallet() // $!!$ tac
+                   //.UseWallet() //$!!$ tac
                    .AddPowPosMining() //$!!$ tac
                    //.AddMining() //$!!$ tac
                    .UseApi()
