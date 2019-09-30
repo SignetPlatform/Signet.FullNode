@@ -1,16 +1,16 @@
 {
   "profiles": {
-    "Stratis.CLI Stratis REST API": {
+    "Signet.CLI Signet REST API": {
       "commandName": "Project",
-      "commandLineArgs": "stratis -testnet Wallet/files"
+      "commandLineArgs": "Wallet/files"
     },
-    "Stratis.CLI Stratis RPC": {
+    "Signet.CLI getInfo() RPC": {
       "commandName": "Project",
-      "commandLineArgs": "stratis -testnet -rpcuser=user -rpcpassword=password getinfo"
+      "commandLineArgs": "-rpcuser=user -rpcpassword=password getinfo"
     },
-    "Stratis.CLI Bitcoin RPC": {
+    "Signet.CLI getBalance() RPC": {
       "commandName": "Project",
-      "commandLineArgs": "bitcoin -testnet -rpcuser=user -rpcpassword=password getbalance"
+      "commandLineArgs": "-rpcuser=user -rpcpassword=password getbalance"
     }
   }
 }

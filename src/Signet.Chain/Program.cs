@@ -1,27 +1,27 @@
-﻿namespace Signet.Chain
-{
-   using System;
-   using System.Linq;
-   using System.Threading.Tasks;
-   using NBitcoin;
-   using NBitcoin.Protocol;
-   using Signet.Features.BlockExplorer;
-   using Signet.Networks;
-   using Stratis.Bitcoin;
-   using Stratis.Bitcoin.Builder;
-   using Stratis.Bitcoin.Configuration;
-   using Stratis.Bitcoin.Features.Api;
-   using Stratis.Bitcoin.Features.Apps;
-   using Stratis.Bitcoin.Features.BlockStore;
-   using Stratis.Bitcoin.Features.ColdStaking;
-   using Stratis.Bitcoin.Features.Consensus;
-   using Stratis.Bitcoin.Features.Dns;
-   using Stratis.Bitcoin.Features.MemoryPool;
-   using Stratis.Bitcoin.Features.Miner;
-   using Stratis.Bitcoin.Features.RPC;
-   using Stratis.Bitcoin.Features.Wallet;
-   using Stratis.Bitcoin.Utilities;
+﻿using System;
+using System.Linq;
+using System.Threading.Tasks;
+using NBitcoin;
+using NBitcoin.Protocol;
+using Signet.Features.BlockExplorer;
+using Signet.Networks;
+using Stratis.Bitcoin;
+using Stratis.Bitcoin.Builder;
+using Stratis.Bitcoin.Configuration;
+using Stratis.Bitcoin.Features.Api;
+using Stratis.Bitcoin.Features.Apps;
+using Stratis.Bitcoin.Features.BlockStore;
+using Stratis.Bitcoin.Features.ColdStaking;
+using Stratis.Bitcoin.Features.Consensus;
+using Stratis.Bitcoin.Features.Dns;
+using Stratis.Bitcoin.Features.MemoryPool;
+using Stratis.Bitcoin.Features.Miner;
+using Stratis.Bitcoin.Features.RPC;
+using Stratis.Bitcoin.Utilities;
 
+//
+namespace Signet.Chain
+{
    public class Program
    {
       /// <summary>
@@ -103,7 +103,7 @@
                   .UsePosConsensus()
                   .UseMempool()
                   .UseColdStakingWallet()  // $!!$ tac
-                  //.UseWallet() //$!!$ tac
+                                           //.UseWallet() //$!!$ tac
                   .AddPowPosMining()
                   //.AddMining() //$!!$ tac
                   .UseApi()
@@ -120,9 +120,9 @@
                    .UsePosConsensus()
                    .UseMempool()
                    .UseColdStakingWallet() // $!!$ tac
-                   //.UseWallet() //$!!$ tac
+                                           //.UseWallet() //$!!$ tac
                    .AddPowPosMining() //$!!$ tac
-                   //.AddMining() //$!!$ tac
+                                      //.AddMining() //$!!$ tac
                    .UseApi()
                    .UseApps()
                    .AddRPC()

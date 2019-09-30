@@ -45,9 +45,10 @@ namespace Signet.Networks
          this.Magic = 0x2e534754; // .SGT
          this.DefaultMaxOutboundConnections = 16;
          this.DefaultMaxInboundConnections = 109;
-         this.DefaultPort = 4333;
-         this.DefaultRPCPort = 4334;
-         this.DefaultAPIPort = 4335;
+         this.DefaultPort = 4341;
+         this.DefaultRPCPort = 4342;
+         this.DefaultAPIPort = 4343;
+         this.DefaultSignalRPort = 
          this.MaxTipAge = 2 * 60 * 60;
          this.MinTxFee = 10000;
          this.FallbackFee = 10000;
@@ -98,7 +99,8 @@ namespace Signet.Networks
                  new DateTime(2019, 12, 1, 0, 0, 0, DateTimeKind.Utc))
          };
 
-         this.Consensus = new Consensus(
+         this.Consensus = 
+            new Consensus(
             consensusFactory: consensusFactory,
             consensusOptions: consensusOptions,
             coinType: 1973,
@@ -125,7 +127,7 @@ namespace Signet.Networks
             posNoRetargeting: false,
             powNoRetargeting: false,
             powLimit: new Target(new uint256("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff")),
-            minimumChainWork:    new uint256("0000000000000000000000000000000000000000000000000000000100010001"),
+            minimumChainWork: null,
             isProofOfStake: true,
             lastPowBlock: 12500,
             proofOfStakeLimit: new BigInteger(uint256.Parse("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff").ToBytes(false)),
@@ -138,29 +140,14 @@ namespace Signet.Networks
          // The Base58 symbol chart used in Bitcoin is specific to the Bitcoin project and is not intended to be the same as
          // any other Base58 implementation used outside the context of Bitcoin(the characters excluded are: 0, O, I, and l).
 
-         // v   c  v   c  v   c  v   c
-         // 0   1  1   2  2   3  3   4
-         // 4   5  5   6  6   7  7   8
-         // 8   9  9   A  10  B  11  C
-         // 12  D  13  E  14  F  15  G
-         // 16  H  17  J  18  K  19  L
-         // 20  M  21  N  22  P  23  Q
-         // 24  R  25  S  26  T  27  U
-         // 28  V  29  W  30  X  31  Y
-         // 32  Z  33  a  34  b  35  c
-         // 36  d  37  e  38  f  39  g
-         // 40  h  41  i  42  j  43  k
-         // 44  m  45  n  46  o  47  p
-         // 48  q  49  r  50  s  51  t
-         // 52  u  53  v  54  w  55  x
-         // 56  y  57  z
+
 
          // The algorithm for encoding address_byte_string (consisting of 1 - byte_version + hash_or_other_data + 4 - byte_check_code) is
          //
          this.Base58Prefixes = new byte[12][];
          this.Base58Prefixes[(int)Base58Type.PUBKEY_ADDRESS] = new byte[] { (63) }; // P2PKH: S, list: https://en.bitcoin.it/wiki/List_of_address_prefixes
          this.Base58Prefixes[(int)Base58Type.SCRIPT_ADDRESS] = new byte[] { (125) }; // P2SH: s
-         this.Base58Prefixes[(int)Base58Type.SECRET_KEY] = new byte[] { (63 + 128) }; // WIF: V (compressed, 8 uncompressed), initial character for compressed private key in WIF format.
+         this.Base58Prefixes[(int)Base58Type.SECRET_KEY] = new byte[] { (63 + 128) }; // WIF: s (compressed, 8 uncompressed), initial character for compressed private key in WIF format.
          this.Base58Prefixes[(int)Base58Type.ENCRYPTED_SECRET_KEY_NO_EC] = new byte[] { 0x01, 0x42 };
          this.Base58Prefixes[(int)Base58Type.ENCRYPTED_SECRET_KEY_EC] = new byte[] { 0x01, 0x43 };
          this.Base58Prefixes[(int)Base58Type.EXT_PUBLIC_KEY] = new byte[] { (0x04), (0x88), (0xB2), (0x1E) };
