@@ -79,7 +79,7 @@ namespace Stratis.Bitcoin.Cli
                 {
                     var builder = new StringBuilder();
                     builder.AppendLine("Usage:");
-                    builder.AppendLine(" dotnet run <Stratis.Bitcoin.Cli/Stratis.Bitcoin.Cli.dll> [network-name] [options] [method] <command> [arguments]");
+                    builder.AppendLine(" dotnet run <Signet.Cli/Signet.Cli.dll> [network-name] [options] [method] <command> [arguments]");
                     builder.AppendLine();
                     builder.AppendLine("Command line arguments:");
                     builder.AppendLine();
