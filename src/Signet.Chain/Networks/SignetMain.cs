@@ -216,7 +216,7 @@ namespace Signet.Networks
                 //.Register<StratisBugFixPosFutureDriftRule>()
                 .Register<PosFutureDriftRule>()
                 .Register<CheckDifficultyPosRule>()
-                //.Register<StratisHeaderVersionRule>()
+                .Register<StratisHeaderVersionRule>() //$!!$ tac
                 .Register<ProvenHeaderSizeRule>()
                 .Register<ProvenHeaderCoinstakeRule>();
 

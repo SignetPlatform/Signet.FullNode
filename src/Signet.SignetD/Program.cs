@@ -104,8 +104,8 @@ namespace Signet.Chain
                   .UseMempool()
                   .UseColdStakingWallet()  // $!!$ tac
                                            //.UseWallet() //$!!$ tac
-                  //.AddPowPosMining()
-                  .AddMining() //$!!$ tac
+                  .AddPowPosMining()
+                  //.AddMining() //$!!$ tac
                   .UseApi()
                   .UseDns()
                   .AddRPC()
@@ -121,8 +121,8 @@ namespace Signet.Chain
                    .UseMempool()
                    .UseColdStakingWallet() // $!!$ tac
                                            //.UseWallet() //$!!$ tac
-                   //.AddPowPosMining() //$!!$ tac
-                   .AddMining() //$!!$ tac
+                   .AddPowPosMining() //$!!$ tac
+                   //.AddMining() //$!!$ tac
                    .UseApi()
                    .UseApps()
                    .AddRPC()

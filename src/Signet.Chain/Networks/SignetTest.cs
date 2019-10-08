@@ -109,23 +109,23 @@ namespace Signet.Networks
 
          this.Checkpoints = new Dictionary<int, CheckpointInfo>
             {
-                { 0, new CheckpointInfo(new uint256("0x00077765f625cc2cb6266544ff7d5a462f25be14ea1116dc2bd2fec17e40a5e3"), new uint256("0x0000000000000000000000000000000000000000000000000000000000000000")) },
-                { 2, new CheckpointInfo(new uint256("0xcf917ba726c8d05496a6b144fc433dc06cc574f49ca429e250454a0bbaab926d"), new uint256("0x315e64b6097a15128b0379c501ef278ff4fa70b062b44ce69a95e604464c46f8")) }, // Premine
-                { 50, new CheckpointInfo(new uint256("0x464ae37e22cc44d0c8a86478ff95f98a6e1c44ceb3e175181e1a382270d1780c"), new uint256("0x6b5e010988dc9716e010e3ec21f7f60a4850726d5bbc7c212fab4e7b9b3566d7")) },
+                //{ 0, new CheckpointInfo(new uint256("0x00077765f625cc2cb6266544ff7d5a462f25be14ea1116dc2bd2fec17e40a5e3"), new uint256("0x0000000000000000000000000000000000000000000000000000000000000000")) },
+                //{ 2, new CheckpointInfo(new uint256("0xcf917ba726c8d05496a6b144fc433dc06cc574f49ca429e250454a0bbaab926d"), new uint256("0x315e64b6097a15128b0379c501ef278ff4fa70b062b44ce69a95e604464c46f8")) }, // Premine
+                //{ 50, new CheckpointInfo(new uint256("0x464ae37e22cc44d0c8a86478ff95f98a6e1c44ceb3e175181e1a382270d1780c"), new uint256("0x6b5e010988dc9716e010e3ec21f7f60a4850726d5bbc7c212fab4e7b9b3566d7")) },
             };
 
          this.DNSSeeds = new List<DNSSeedData>
             {
-                new DNSSeedData("signet-chain.org", "testseed.city-chain.org"),
-                new DNSSeedData("signet-coin.org", "testseed.city-coin.org"),
-                new DNSSeedData("signetchain.foundation", "testseed.citychain.foundation")
+                //new DNSSeedData("signet-chain.org", "testseed.city-chain.org"),
+                //new DNSSeedData("signet-coin.org", "testseed.city-coin.org"),
+                //new DNSSeedData("signetchain.foundation", "testseed.citychain.foundation")
             };
 
          this.SeedNodes = new List<NetworkAddress>
             {
-                new NetworkAddress(IPAddress.Parse("40.115.2.6"), this.DefaultPort),
-                new NetworkAddress(IPAddress.Parse("13.66.158.6"), this.DefaultPort),
-                new NetworkAddress(IPAddress.Parse("52.175.194.227"), this.DefaultPort)
+                //new NetworkAddress(IPAddress.Parse("40.115.2.6"), this.DefaultPort),
+                //new NetworkAddress(IPAddress.Parse("13.66.158.6"), this.DefaultPort),
+                //new NetworkAddress(IPAddress.Parse("52.175.194.227"), this.DefaultPort)
             };
 
          this.StandardScriptsRegistry = new SignetStandardScriptsRegistry();
