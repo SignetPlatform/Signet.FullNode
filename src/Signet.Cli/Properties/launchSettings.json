@@ -1,8 +1,8 @@
 {
   "profiles": {
-    "Signet.CLI Signet REST API": {
+    "Signet.CLI Signet REST API - files": {
       "commandName": "Project",
-      "commandLineArgs": "signet Wallet/files"
+      "commandLineArgs": "signet GET Wallet/files"
     },
     "Signet.CLI Signet REST API - generate": {
       "commandName": "Project",

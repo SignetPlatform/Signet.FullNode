@@ -76,14 +76,18 @@ namespace Signet.Networks
 
             this.Genesis = genesisBlock;
 
-            // Taken from StratisX.
-            var consensusOptions = new PosConsensusOptions(
+            // Taken from StratisX.    // $!!$ tac
+            var consensusOptions = new SignetPosConsensusOptions(
                 maxBlockBaseSize: 1_000_000,
                 maxStandardVersion: 2,
                 maxStandardTxWeight: 100_000,
                 maxBlockSigopsCost: 20_000,
                 maxStandardTxSigopsCost: 20_000 / 5
             );
+
+         //$!!$
+         consensusOptions.EnforceMinProtocolVersionAtBlockHeight = 50000; // setting the value to zero makes the functionality inactive
+
 
             var buriedDeployments = new BuriedDeploymentsArray
             {
