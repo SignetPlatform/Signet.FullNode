@@ -62,8 +62,8 @@ namespace Signet.Networks
             var consensusFactory = new PosConsensusFactory();
 
             // Create the genesis block.
-            this.GenesisTime = 1569433880;   // $!!$ tac
-            this.GenesisNonce = 2608243;     // $!!$ tac
+            this.GenesisTime = 1570492228;   // $!!$ tac
+            this.GenesisNonce = 1267448;     // $!!$ tac
             this.GenesisBits = 0x1E0FFFFF;
             this.GenesisVersion = 1;
             this.GenesisReward = Money.Zero;
@@ -205,8 +205,8 @@ namespace Signet.Networks
 
             // 64 below should be changed to TargetSpacingSeconds when we move that field.
             Assert(this.DefaultBanTimeSeconds <= this.Consensus.MaxReorgLength * 64 / 2);
-            Assert(this.Consensus.HashGenesisBlock == uint256.Parse("0x0000026035d95557fa8412b9708258ba04a9c19eeb23369f8d7fafe71448efa6"));
-            Assert(this.Genesis.Header.HashMerkleRoot == uint256.Parse("0xa37d328888a76c2d29da2ea8ce8b741d5b6412c44dfab1b7e2fb21e267b93391"));
+            Assert(this.Consensus.HashGenesisBlock == uint256.Parse("0x00000dfe58434aa9b9df28eb4b07453e0364992b50cfd1d6450c6abac82a02ed"));
+            Assert(this.Genesis.Header.HashMerkleRoot == uint256.Parse("0x0330848a5b9eee6d84984fb8e49110be9a7205b5746a2e1f8517f683a963558d"));
 
             this.RegisterRules(this.Consensus);
             this.RegisterMempoolRules(this.Consensus);
