@@ -43,7 +43,7 @@ namespace Signet.Chain
                 // Example: -chain=bitcoin
                 var chain = configReader.GetOrDefault<string>("chain", "signet");
 
-                var networkIdentifier = "main";
+                var networkIdentifier = "mainnet";
 
                 if (configReader.GetOrDefault<bool>("testnet", false))
                 {
