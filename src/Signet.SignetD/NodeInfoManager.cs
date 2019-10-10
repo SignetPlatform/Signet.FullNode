@@ -116,7 +116,6 @@ namespace Signet.Chain
                 {
                     list.Add(ex);
                 }
-
             }
 
             return list;

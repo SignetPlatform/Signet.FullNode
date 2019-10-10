@@ -11,11 +11,11 @@ using NBitcoin.Protocol;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Stratis.Bitcoin.Configuration;
-using Stratis.Bitcoin.Features.RPC;
 using Stratis.Bitcoin.Features.Api;
+using Stratis.Bitcoin.Features.RPC;
 using Stratis.Bitcoin.Utilities.Extensions;
 
-namespace Stratis.Bitcoin.Cli
+namespace Signet.Chain.Cli
 {
     public class Program
     {
@@ -114,11 +114,11 @@ namespace Stratis.Bitcoin.Cli
                 }
                 else if (networkName.Contains("stratis"))
                 {
-                    networksSelector = Networks.Networks.Stratis;
+                    networksSelector = Stratis.Bitcoin.Networks.Networks.Stratis;
                 }
                 else
                 {
-                    networksSelector = Networks.Networks.Bitcoin;
+                    networksSelector = Stratis.Bitcoin.Networks.Networks.Bitcoin;
                 }
 
                 // API calls require both the contoller name and the method name separated by "/".
@@ -201,9 +201,11 @@ namespace Stratis.Bitcoin.Cli
                         case "POST":
                             httpResponse = CallApiPost(url, commandArgObj);
                             break;
+
                         case "DELETE":
                             httpResponse = CallApiDelete(url, commandArgObj);
                             break;
+
                         default:
                             httpResponse = CallApiGet(url, commandArgObj);
                             break;

@@ -1,10 +1,6 @@
 ﻿//
 //  Signet.FullNode - Blockchain / Cryptocurrency Platform
-//  Portions Copyright © 2019 Synuit Software. All Rights Reserved.
-//
-//  This work contains trade secrets and confidential material of
-//  Synuit, and its use or disclosure in whole or in part
-//  without the express written permission of Synuit is prohibited.
+//  Copyright © 2019 Synuit Software. All Rights Reserved.
 //
 //  $!!$ tac
 //
@@ -36,7 +32,7 @@ namespace Signet.Networks
 
         public SignetMain()
         {
-            NetworkConfiguration config = new NetworkConfigurations().GetNetwork("main", "signet");
+            NetworkConfiguration config = new NetworkConfigurations().GetNetwork("mainnet", "signet");
             // The message start string is designed to be unlikely to occur in normal data.
             // The characters are rarely used upper ASCII, not valid as UTF-8, and produce
             // a large 4-byte int at any alignment.
@@ -45,10 +41,10 @@ namespace Signet.Networks
             this.Magic = 0x2e534754; // .SGT
             this.DefaultMaxOutboundConnections = 16;
             this.DefaultMaxInboundConnections = 109;
-            this.DefaultPort = config.Port; //$!!$ tac 4341;
-            this.DefaultRPCPort = config.RpcPort; //$!!$ tac 4342;
-            this.DefaultAPIPort = config.ApiPort; // $!!$ tac 4343;
-            this.DefaultSignalRPort = config.WsPort; //$!!$ 4344;
+            this.DefaultPort = config.Port; //$!!$ tac
+            this.DefaultRPCPort = config.RpcPort; //$!!$ tac
+            this.DefaultAPIPort = config.ApiPort; // $!!$ tac
+            this.DefaultSignalRPort = config.WsPort; //$!!$ tac 
             this.MaxTipAge = 2 * 60 * 60;
             this.MinTxFee = 10000;
             this.FallbackFee = 10000;
@@ -107,7 +103,7 @@ namespace Signet.Networks
                new Consensus(
                consensusFactory: consensusFactory,
                consensusOptions: consensusOptions,
-               coinType: 1973,
+               coinType: 1973, //$!!$ tac 1973
                hashGenesisBlock: genesisBlock.GetHash(),
                subsidyHalvingInterval: 210000,
                majorityEnforceBlockUpgrade: 750,
@@ -124,7 +120,7 @@ namespace Signet.Networks
                coinbaseMaturity: 50,
                premineHeight: 2,
                premineReward: Money.Coins(98000000),
-               proofOfWorkReward: Money.Coins(4),
+               proofOfWorkReward: Money.Coins(4),  // Produced up until last POW block.
                powTargetTimespan: TimeSpan.FromSeconds(14 * 24 * 60 * 60), // two weeks
                powTargetSpacing: TimeSpan.FromSeconds(10 * 60),
                powAllowMinDifficultyBlocks: false,
@@ -133,7 +129,7 @@ namespace Signet.Networks
                powLimit: new Target(new uint256("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff")),
                minimumChainWork: null,
                isProofOfStake: true,
-               lastPowBlock: 12500,
+               lastPowBlock: 25000,
                proofOfStakeLimit: new BigInteger(uint256.Parse("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff").ToBytes(false)),
                proofOfStakeLimitV2: new BigInteger(uint256.Parse("000000000000ffffffffffffffffffffffffffffffffffffffffffffffffffff").ToBytes(false)),
                proofOfStakeReward: Money.Coins(20)
@@ -195,6 +191,7 @@ namespace Signet.Networks
 
             this.SeedNodes = new List<NetworkAddress>
             {
+                //$!!$ tac
                 //new NetworkAddress(IPAddress.Parse("52.175.194.227"), this.DefaultPort),
                 //new NetworkAddress(IPAddress.Parse("13.73.143.193"), this.DefaultPort),
                 //new NetworkAddress(IPAddress.Parse("40.115.2.6"), this.DefaultPort),
