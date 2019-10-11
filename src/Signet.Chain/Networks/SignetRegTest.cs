@@ -16,12 +16,14 @@ namespace Signet.Networks
    {
       public SignetRegTest()
       {
-         this.Name = "SignetRegTest";
+            NetworkConfiguration config = new NetworkConfigurations().GetNetwork("regtest", "signet");
+            this.Name = "SignetRegTest";
          this.NetworkType = NetworkType.Regtest;
-         this.Magic = 0x43525901; // .CRT
-         this.DefaultPort = 14333;
-         this.DefaultRPCPort = 14334;
-         this.DefaultAPIPort = 14335;
+         this.Magic = 0x2e545347; // .TSG
+         this.DefaultPort = config.Port;
+         this.DefaultRPCPort = config.RpcPort;
+         this.DefaultAPIPort = config.ApiPort;
+         this.DefaultSignalRPort = config.WsPort;
          this.MinTxFee = 0;
          this.FallbackFee = 0;
          this.MinRelayTxFee = 0;
@@ -33,8 +35,8 @@ namespace Signet.Networks
          var consensusFactory = new PosConsensusFactory();
 
          // Create the genesis block.
-         this.GenesisTime = 1538568000; // 10/03/2018 @ 12:00pm (UTC)
-         this.GenesisNonce = 82501;
+         this.GenesisTime = 1570492222; 
+         this.GenesisNonce = 17287;
          this.GenesisBits = 0x1F00FFFF;
          this.GenesisVersion = 1;
          this.GenesisReward = Money.Zero;
@@ -46,10 +48,6 @@ namespace Signet.Networks
          
      
          Block genesisBlock = CreateSignetGenesisBlock(pszTimestamp, consensusFactory, this.GenesisTime, this.GenesisNonce, this.GenesisBits, this.GenesisVersion, this.GenesisReward);
-
-         //genesisBlock.Header.Time = 1494909211;
-         //genesisBlock.Header.Nonce = 2433759;
-         //genesisBlock.Header.Bits = powLimit;
 
          this.Genesis = genesisBlock;
 
@@ -78,7 +76,7 @@ namespace Signet.Networks
          this.Consensus = new Consensus(
             consensusFactory: consensusFactory,
             consensusOptions: consensusOptions,
-            coinType: 1926,
+            coinType: 1973, //$!!$ tac
             hashGenesisBlock: genesisBlock.GetHash(),
             subsidyHalvingInterval: 210000,
             majorityEnforceBlockUpgrade: 750,
@@ -86,7 +84,7 @@ namespace Signet.Networks
             majorityWindow: 1000,
             buriedDeployments: buriedDeployments,
             bip9Deployments: bip9Deployments,
-            bip34Hash: new uint256("0x0000da5d40883d6c8aade797d8d6dcbf5cbc8e6428569170da39d2f01e8290e5"),
+            bip34Hash: new uint256("0x0000000000000000000000000000000000000000000000000000000000000000"), // $!!$ tac
             ruleChangeActivationThreshold: 1916, // 95% of 2016
             minerConfirmationWindow: 2016, // nPowTargetTimespan / nPowTargetSpacing
             maxReorgLength: 500,
@@ -117,9 +115,9 @@ namespace Signet.Networks
             // { 100_000 , new CheckpointInfo(uint256.Zero, uint256.Zero) }
          };
 
-         this.Base58Prefixes[(int)Base58Type.PUBKEY_ADDRESS] = new byte[] { (65) };
-         this.Base58Prefixes[(int)Base58Type.SCRIPT_ADDRESS] = new byte[] { (196) };
-         this.Base58Prefixes[(int)Base58Type.SECRET_KEY] = new byte[] { (65 + 128) };
+         this.Base58Prefixes[(int)Base58Type.PUBKEY_ADDRESS] = new byte[] { (65) };  // T
+         this.Base58Prefixes[(int)Base58Type.SCRIPT_ADDRESS] = new byte[] { (127) }; // t
+         this.Base58Prefixes[(int)Base58Type.SECRET_KEY] = new byte[] { (65 + 128) };// wif ??? $!!$ tac
 
          this.DNSSeeds = new List<DNSSeedData>
          {
@@ -143,8 +141,8 @@ namespace Signet.Networks
 
          // 64 below should be changed to TargetSpacingSeconds when we move that field.
          Assert(this.DefaultBanTimeSeconds <= this.Consensus.MaxReorgLength * 64 / 2);
-         Assert(this.Consensus.HashGenesisBlock == uint256.Parse("0x000059f90f721b39d0eac4b131765002f2df7026dc29ad4da7c231aeef8aaaf5"));
-         Assert(this.Genesis.Header.HashMerkleRoot == uint256.Parse("0x2a7429016657ae0fd654553542bcc4f451b8f70665772dbb4e8227a4475d4ba8"));
+         Assert(this.Consensus.HashGenesisBlock == uint256.Parse("0x0000c0b9eaf67a210b46218bad5d3587aab6500d4bc2b91b5b1a48c19ce8f6c7"));
+         Assert(this.Genesis.Header.HashMerkleRoot == uint256.Parse("0xa42c30d6615b79c0cc5abd6a9e72e4cf14b29fd4de7d14e62f0ce2bca9f196a8"));
 
          this.RegisterRules(this.Consensus);
       }
